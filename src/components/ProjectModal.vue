@@ -23,7 +23,7 @@ const emit = defineEmits(['close'])
         v-motion
         :initial="{ opacity: 0, scale: 0.9, y: 20 }"
         :enter="{ opacity: 1, scale: 1, y: 0 }"
-        class="bg-neutral-900 border border-neutral-800 w-full max-w-3xl rounded-[2.5rem] overflow-hidden relative z-10 shadow-2xl"
+        class="bg-neutral-900 border border-neutral-800 w-full max-w-3xl max-h-[90vh] rounded-[2.5rem] overflow-hidden overflow-y-auto relative z-10 shadow-2xl"
       >
         <button 
           @click="emit('close')"

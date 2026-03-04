@@ -31,14 +31,6 @@ const projects = [
   }
 ]
 
-const featuredProject = {
-  title: 'Modern SaaS Dashboard',
-  desc: 'Platform analitik real-time dengan integrasi berbagai API.',
-  fullDesc: 'Platform dashboard all-in-one yang mengintegrasikan data dari berbagai sumber API pihak ketiga. Menggunakan arsitektur microservices untuk memastikan performa maksimal dalam pengolahan data besar.',
-  tag: 'Featured',
-  tech: ['Vue 3', 'Node.js', 'PostgreSQL', 'Tailwind CSS']
-}
-
 const openModal = (project) => {
   selectedProject.value = project
   isModalOpen.value = true
@@ -47,45 +39,6 @@ const openModal = (project) => {
 
 <template>
   <main id="projects" class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[180px]">
-    <!-- Featured: ML & Web Integration -->
-    <div 
-      @click="openModal(featuredProject)"
-      v-motion
-      :initial="{ 
-        opacity: 0, 
-        rotateX: -25,
-        y: 40,
-        transformPerspective: 1000 
-      }"
-      :visible-once="{ 
-        opacity: 1, 
-        rotateX: 0,
-        y: 0,
-        transition: { 
-          duration: 1000,
-          delay: 100,
-          ease: [0.215, 0.61, 0.355, 1]
-        } 
-      }"
-      class="md:col-span-2 md:row-span-2 bg-neutral-900 rounded-3xl p-8 border border-neutral-800 flex flex-col justify-between hover:border-purple-500/50 hover:bg-neutral-800/80 transition-all duration-500 group relative overflow-hidden cursor-pointer shadow-xl"
-    >
-      <!-- Shine Effect Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-      
-      <div class="relative z-10">
-        <div class="bg-purple-500/10 text-purple-400 w-fit px-3 py-1 rounded-full text-xs font-medium mb-4">Core Interests</div>
-        <h2 class="text-3xl font-bold mb-4 leading-tight group-hover:text-white transition-colors">ML & Web Development</h2>
-        <p class="text-neutral-400 group-hover:text-neutral-300 transition-colors">Saya berdedikasi untuk terus berkembang di dua bidang utama: menciptakan model cerdas dengan Machine Learning dan membangun platform web yang handal.</p>
-      </div>
-      <div class="flex flex-wrap gap-2 relative z-10">
-        <span v-for="t in ['Python', 'FastAPI', 'JS', 'Vue.js']" :key="t" class="text-xs bg-neutral-950 px-3 py-1.5 rounded-full border border-neutral-800 group-hover:border-purple-500/30 transition-colors">{{ t }}</span>
-      </div>
-      <!-- Decorative element -->
-      <div class="absolute -right-10 -bottom-10 text-purple-500/10 group-hover:text-purple-500/20 group-hover:scale-110 transition-all duration-700">
-        <BrainCircuit :size="200" />
-      </div>
-    </div>
-    
     <!-- About Card -->
     <div 
       v-motion
